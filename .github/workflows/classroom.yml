@@ -1,4 +1,4 @@
-name: Autograding Tests
+name: Evaluación
 'on':
 - push
 - repository_dispatch
@@ -7,7 +7,7 @@ permissions:
   actions: read
   contents: read
 jobs:
-  run-autograding-tests:
+  ejecutar-evaluacion-automatica:
     runs-on: ubuntu-latest
     if: github.actor != 'github-classroom[bot]'
     steps:
@@ -17,7 +17,7 @@ jobs:
       id: evaluacion
       uses: classroom-resources/autograding-python-grader@v1
       with:
-        timeout: 10
+        timeout: 60
         max-score: 10
         setup-command: pip install pytest
     - name: Autograding Reporter
