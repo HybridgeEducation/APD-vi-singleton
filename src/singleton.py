@@ -1,19 +1,19 @@
 class SingletonMeta(type):
     """
-    Metaclass for Singleton. Ensure only one instance of the Singleton class is created.
+    Metaclass para la clase Singleton. Esta clase se asegura de que exista una única instancia de la clase Singleton
     """
     _instances = {}
 
     def __call__(cls, *args, **kwargs):
-        # TODO: Implement the Singleton pattern
+        # TODO: Implementa el patrón Singleton
         pass
 
 class SettingsManager(metaclass=SingletonMeta):
     def __init__(self):
         self.settings = {
-            "volume": 50,
-            "brightness": 70,
-            "difficulty": "normal"
+            "volumen": 50,
+            "brillo": 70,
+            "dificultad": "normal"
         }
 
     def set_setting(self, key, value):
