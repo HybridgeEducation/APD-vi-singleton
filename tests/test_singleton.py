@@ -2,6 +2,10 @@ import unittest
 from src.singleton import SettingsManager
 
 class TestSettingsManagerSingleton(unittest.TestCase):
+    def setUp(self):
+        # Reset the singleton instance before each test
+        SettingsManager._instance = None
+        
     def test_singleton_instance(self):
         settings1 = SettingsManager()
         settings2 = SettingsManager()
